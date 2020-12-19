@@ -55,18 +55,3 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
             M += 1
 
     return M/N
-
-def test(number):
-    hat = Hat(black=6, red=4, green=3)
-    mean = 0
-    for _ in range(number):
-        probability = experiment(hat=hat,
-                      expected_balls={"red":2,"green":1},
-                      num_balls_drawn=5,
-                      num_experiments=2000)
-        mean += probability
-        print(probability)
-    mean /= number
-    print("mean:", mean)
-
-test(100)
